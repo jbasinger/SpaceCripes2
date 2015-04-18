@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\RandomAliens.cs" />
      <Compile Include="Assets\Scripts\ScaleInOut.cs" />
      <Compile Include="Assets\Scripts\StateManager.cs" />
+     <Compile Include="Assets\Scripts\WorldState.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

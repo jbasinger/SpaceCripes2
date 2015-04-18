@@ -134,12 +134,36 @@ public class StateManager : MonoBehaviour {
 	}
 
 	void CheckWinLoseConditions(){
+		if(world.transform.childCount == 0){
+			state = GameState.Won;
+		}
+		if(world.GetComponent<WorldState>().hitPoints <= 0){
+			state = GameState.Lost;
+		}
 	}
 
 	void WinGame(){
+		Debug.Log("You win!");
+		state = GameState.Ending;
+		ClearMeteorsAndAliens();
 	}
 
 	void LoseGame(){
+		Debug.Log ("You lose!");
+		state = GameState.Ending;
+		ClearMeteorsAndAliens();
+		world.AddComponent<ColorFlipOut>();
+	}
+
+	void ClearMeteorsAndAliens(){
+		GameObject[] aliens = GameObject.FindGameObjectsWithTag("Alien");
+		GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteor");
+		foreach(GameObject alien in aliens){
+			Destroy(alien);
+		}
+		foreach(GameObject meteor in meteors){
+			Destroy(meteor);
+		}
 	}
 
 	public bool IsStopped(){
@@ -147,3 +171,4 @@ public class StateManager : MonoBehaviour {
 	}
 
 }
+
