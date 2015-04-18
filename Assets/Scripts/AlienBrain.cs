@@ -15,8 +15,11 @@ public class AlienBrain : MonoBehaviour {
 	private Vector2 mahScale;
 	private float timer = 0f;
 
+	private StateManager state;
+
 	// Use this for initialization
 	void Start () {
+		state = GameObject.Find("StateManager").GetComponent<StateManager>();
 		world = GameObject.Find("World");
 		UpdateDirectionAndTimer();
 		//Randomly remove or add 10% of the speed. Make stuff look more fun?
@@ -25,6 +28,8 @@ public class AlienBrain : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(state.IsStopped()) return;
 
 		timer -= Time.deltaTime;
 

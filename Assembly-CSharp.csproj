@@ -46,14 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MeteorCollision.cs" />
      <Compile Include="Assets\Scripts\AlienBrain.cs" />
-     <Compile Include="Assets\Scripts\ButtonPress.cs" />
+     <Compile Include="Assets\Scripts\ColorFlipOut.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\MeteorCollision.cs" />
      <Compile Include="Assets\Scripts\MeteorManager.cs" />
      <Compile Include="Assets\Scripts\PlanetaryGravity.cs" />
      <Compile Include="Assets\Scripts\RandomAliens.cs" />
-     <Compile Include="Assets\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Scripts\ScaleInOut.cs" />
+     <Compile Include="Assets\Scripts\StateManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

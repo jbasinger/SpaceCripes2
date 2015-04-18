@@ -16,8 +16,11 @@ public class InputManager : MonoBehaviour {
 	private SpriteRenderer leftButtonRenderer;
 	private SpriteRenderer rightButtonRenderer;
 
+	private StateManager state;
+
 	// Use this for initialization
 	void Start () {
+		state = GameObject.Find("StateManager").GetComponent<StateManager>();
 		world = GameObject.Find("World");
 		leftButton = GameObject.Find("LeftButton");
 		rightButton = GameObject.Find("RightButton");
@@ -30,6 +33,8 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(state.IsStopped()) return;
 
 		factor = Time.deltaTime*speed;
 		mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
