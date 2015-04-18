@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MeteorManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AlienBrain.cs">
     <Files>
-      <File FileName="Assets\Scripts\MeteorManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RandomAliens.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MeteorManager.cs" Line="32" Column="67" />
+      <File FileName="Assets\Scripts\RandomAliens.cs" Line="18" Column="4" />
       <File FileName="Assets\Scripts\PlanetaryGravity.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AlienBrain.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AlienBrain.cs" Line="53" Column="11" />
+      <File FileName="Assets\MeteorCollision.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
