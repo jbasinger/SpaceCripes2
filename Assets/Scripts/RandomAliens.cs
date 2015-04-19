@@ -48,11 +48,21 @@ public class RandomAliens : MonoBehaviour {
 				alien.AddComponent<BulkyAlien>();
 			}
 		}
-		if(level >= 3){
+		if(level == 4){
 			if(Random.Range (0,21)%3 == 0){
+				if(Random.Range (0,22)%2 == 0){
+					alien.AddComponent<BulkyAlien>();
+				} else {
+					alien.AddComponent<SpeedyAlien>();
+				}
+			}
+		}
+		if(level >= 5){
+			if(Random.Range (0,22)%2 == 0){
 				alien.AddComponent<BulkyAlien>();
-			} else {
-				//Make them speedy
+			} 
+			if(Random.Range (0,21)%3 == 0){
+				alien.AddComponent<SpeedyAlien>();
 			}
 		}
 
