@@ -72,11 +72,13 @@ public class WorldState : MonoBehaviour {
 		hpBar.SetActive(false);
 		heartWidth = heartPrefab.GetComponent<SpriteRenderer>().bounds.size.x;
 
-		hearts = new GameObject[hitPoints];
-
-		foreach(GameObject h in hearts){
-			if(h) Destroy(h);
+		if(hearts != null){
+			foreach(GameObject h in hearts){
+				if(h) Destroy(h);
+			}
 		}
+
+		hearts = new GameObject[hitPoints];
 
 		for(int i=0;i<hitPoints;i++){
 			Vector3 newHeartPos = hpBar.transform.position;

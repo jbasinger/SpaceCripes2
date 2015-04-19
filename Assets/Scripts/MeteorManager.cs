@@ -11,6 +11,8 @@ public class MeteorManager : MonoBehaviour {
 	private float distanceToCornerOfScreen;
 	private float meteorStartDistance;
 
+	private int level;
+
 	// Use this for initialization
 	void Start () {
 
@@ -26,7 +28,11 @@ public class MeteorManager : MonoBehaviour {
 	}
 
 	void UpdateMeteorCount(){
-		while(gameObject.transform.childCount < maxMeteorCount){
+
+		level = GameObject.Find("LevelManager").GetComponent<LevelManager>().level;
+		int meteorCount = maxMeteorCount + (level/4); //Banking on truncation here.
+
+		while(gameObject.transform.childCount < meteorCount){
 
 			rndAngle = Random.value*Mathf.PI*2;
 			meteorStartDistance = distanceToCornerOfScreen + Random.value*5.0f;
@@ -35,6 +41,10 @@ public class MeteorManager : MonoBehaviour {
 
 			Transform newMeteor = Instantiate(baseMeteor,rndMeteorStart,Quaternion.identity) as Transform;
 			newMeteor.transform.parent = this.gameObject.transform;
+			PlanetaryGravity grav = newMeteor.GetComponent<PlanetaryGravity>();
+			float gForce = grav.gravitationCoefficient;
+			newMeteor.GetComponent<PlanetaryGravity>().gravitationCoefficient = gForce + ((level-1)*gForce/4);
 		}
 	}
+
 }

@@ -27,8 +27,9 @@ public class StateManager : MonoBehaviour {
 	private float timer;
 	private float dT;
 	private float magnitude;
-	//private int direction = 1;
+
 	private GameObject world;
+	private GameObject levelManager;
 
 	private Transform getReady;
 	private Transform countDown3;
@@ -46,8 +47,9 @@ public class StateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 		world = GameObject.Find("World");
+		levelManager = GameObject.Find("LevelManager");
 
 		//Game Start Prefabs
 		getReady = Instantiate(GetReadyPrefab,Vector3.zero,Quaternion.identity) as Transform;
@@ -162,7 +164,7 @@ public class StateManager : MonoBehaviour {
 	}
 
 	void WinGame(){
-		Debug.Log("You win!");
+		levelManager.gameObject.GetComponent<LevelManager>().LevelUp();
 		state = GameState.Ending;
 		ClearMeteorsAndAliens();
 		youWin.gameObject.SetActive(true);
@@ -171,7 +173,7 @@ public class StateManager : MonoBehaviour {
 	}
 
 	void LoseGame(){
-		Debug.Log ("You lose!");
+		levelManager.gameObject.GetComponent<LevelManager>().Reset();
 		state = GameState.Ending;
 		ClearMeteorsAndAliens();
 		world.AddComponent<ColorFlipOut>();
