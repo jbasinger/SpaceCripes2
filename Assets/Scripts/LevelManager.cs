@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void Reset(){
-		level = 2;
+		level = 1;
 		DrawLevel();
 	}
 
