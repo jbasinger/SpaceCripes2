@@ -14,6 +14,7 @@ public class AlienBrain : MonoBehaviour {
 	private float mahMagnitude;
 	private Vector2 mahScale;
 	private float timer = 0f;
+	private GameObject[] alienParts;
 
 	private StateManager state;
 
@@ -24,6 +25,10 @@ public class AlienBrain : MonoBehaviour {
 		UpdateDirectionAndTimer();
 		//Randomly remove or add 10% of the speed. Make stuff look more fun?
 		speed += Random.Range(-speed/10,speed/10);
+		alienParts = GameObject.FindGameObjectsWithTag("AlienParts");
+		/*foreach(GameObject part in alienParts){
+			part.GetComponent<SpriteRenderer>().color = Color.clear;
+		}*/
 	}
 	
 	// Update is called once per frame
@@ -55,6 +60,13 @@ public class AlienBrain : MonoBehaviour {
 			direction *= -1;
 		}
 		if(coll.gameObject.tag == "Meteor"){
+			foreach(GameObject part in alienParts){
+				GameObject newPart = Instantiate(part,gameObject.transform.position,Quaternion.identity) as GameObject;
+				Rigidbody2D bodyPart = newPart.GetComponent<Rigidbody2D>();
+				bodyPart.AddTorque(5f);
+				newPart.AddComponent<Explosivo>();
+				Destroy (newPart, 3f);
+			}
 			Destroy(gameObject);
 		}
 	}

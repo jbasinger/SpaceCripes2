@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AlienBrain.cs" />
      <Compile Include="Assets\Scripts\ColorFlipOut.cs" />
+     <Compile Include="Assets\Scripts\Explosivo.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\MeteorCollision.cs" />
      <Compile Include="Assets\Scripts\MeteorManager.cs" />
