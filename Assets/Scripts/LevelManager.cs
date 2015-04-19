@@ -33,12 +33,11 @@ public class LevelManager : MonoBehaviour {
 
 	public void LevelUp(){
 		level++;
-		//level += 4;
 		DrawLevel();
 	}
 
 	public void Reset(){
-		level = 1;
+		level = 2;
 		DrawLevel();
 	}
 

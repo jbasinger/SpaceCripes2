@@ -4,11 +4,14 @@ using System.Collections;
 public class RandomAliens : MonoBehaviour {
 
 	public GameObject world;
-	public Transform baseAlien;
+	public GameObject baseAlien;
 	public int numberOfAliens;
+
+	private GameObject levelManager;
 
 	// Use this for initialization
 	void Start () {
+		levelManager = GameObject.Find("LevelManager");
 	}
 	
 	// Update is called once per frame
@@ -19,18 +22,39 @@ public class RandomAliens : MonoBehaviour {
 	public void GenerateAliens(){
 		float worldRadius = world.GetComponent<CircleCollider2D>().radius;
 		float halfHeightOfAlien = baseAlien.transform.localScale.y/4;
-		
-		for(int i=0; i<numberOfAliens;i++){
+
+		int level = levelManager.GetComponent<LevelManager>().level;
+		int alienCount = numberOfAliens + (level/2);
+		if(alienCount > 20) alienCount = 20;
+
+		for(int i=0; i<alienCount;i++){
 			
 			float rndAngle = Random.value*Mathf.PI*2;
 			
 			Vector3 rndCirclePoint = new Vector3(Mathf.Cos(rndAngle)*(worldRadius+halfHeightOfAlien),Mathf.Sin(rndAngle)*(worldRadius+halfHeightOfAlien),0);
 			
-			Transform alien = Instantiate(baseAlien,rndCirclePoint,Quaternion.identity) as Transform;
-			alien.rotation = Quaternion.AngleAxis(rndAngle*Mathf.Rad2Deg-90,new Vector3(0f,0f,1f));
-			
-			alien.SetParent(world.transform);
+			GameObject alien = Instantiate(baseAlien,rndCirclePoint,Quaternion.identity) as GameObject;
+			alien.transform.rotation = Quaternion.AngleAxis(rndAngle*Mathf.Rad2Deg-90,new Vector3(0f,0f,1f));
+			MutateAlien(alien,level);
+			alien.transform.SetParent(world.transform);
 			
 		}
+	}
+
+	void MutateAlien(GameObject alien, int level){
+		if(level == 1) return;
+		if(level == 2 || level == 3){
+			if(Random.Range (0,21)%3 == 0){
+				alien.AddComponent<BulkyAlien>();
+			}
+		}
+		if(level >= 3){
+			if(Random.Range (0,21)%3 == 0){
+				alien.AddComponent<BulkyAlien>();
+			} else {
+				//Make them speedy
+			}
+		}
+
 	}
 }

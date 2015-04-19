@@ -4,6 +4,7 @@ using System.Collections;
 public class AlienBrain : MonoBehaviour {
 
 	public int speed;
+	public int hitPoints;
 
 	public GameObject alienPart0Prefab;
 	public GameObject alienPart1Prefab;
@@ -73,12 +74,17 @@ public class AlienBrain : MonoBehaviour {
 			direction *= -1;
 		}
 		if(coll.gameObject.tag == "Meteor"){
-			foreach(GameObject part in alienParts){
-				GameObject newPart = Instantiate(part,gameObject.transform.position,Quaternion.identity) as GameObject;
-				newPart.AddComponent<Explosivo>();
-				Destroy (newPart, 3f);
+
+			hitPoints -= 1;
+
+			if(hitPoints <= 0){
+				foreach(GameObject part in alienParts){
+					GameObject newPart = Instantiate(part,gameObject.transform.position,Quaternion.identity) as GameObject;
+					newPart.AddComponent<Explosivo>();
+					Destroy (newPart, 3f);
+				}
+				Destroy(gameObject);
 			}
-			Destroy(gameObject);
 		}
 	}
 }

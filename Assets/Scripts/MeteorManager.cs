@@ -43,7 +43,7 @@ public class MeteorManager : MonoBehaviour {
 			newMeteor.transform.parent = this.gameObject.transform;
 			PlanetaryGravity grav = newMeteor.GetComponent<PlanetaryGravity>();
 			float gForce = grav.gravitationCoefficient;
-			newMeteor.GetComponent<PlanetaryGravity>().gravitationCoefficient = gForce + ((level-1)*gForce/4);
+			newMeteor.GetComponent<PlanetaryGravity>().gravitationCoefficient = gForce + ((level-1)*gForce/10);
 		}
 	}
 

@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\MeteorCollision.cs" />
      <Compile Include="Assets\Scripts\MeteorManager.cs" />
+     <Compile Include="Assets\Scripts\Mutations\BulkyAlien.cs" />
      <Compile Include="Assets\Scripts\PlanetaryGravity.cs" />
      <Compile Include="Assets\Scripts\RandomAliens.cs" />
      <Compile Include="Assets\Scripts\RandomSpin.cs" />

@@ -1,12 +1,20 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StateManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AlienBrain.cs">
     <Files>
-      <File FileName="Assets\Scripts\StateManager.cs" Line="17" Column="1" />
+      <File FileName="Assets\Scripts\StateManager.cs" Line="208" Column="1" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="40" Column="12" />
+      <File FileName="Assets\Scripts\WorldState.cs" Line="74" Column="3" />
+      <File FileName="Assets\Scripts\MeteorManager.cs" Line="46" Column="101" />
+      <File FileName="Assets\Scripts\MeteorCollision.cs" Line="44" Column="1" />
+      <File FileName="Assets\Scripts\RandomAliens.cs" Line="18" Column="18" />
+      <File FileName="Assets\Scripts\AlienBrain.cs" Line="81" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\Repos\Games\LudumDare32\SpaceCripes2\Space Cripes 2\Assets\Scripts\RandomAliens.cs" line="37" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
