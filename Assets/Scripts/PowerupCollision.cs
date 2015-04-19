@@ -41,8 +41,10 @@ public class PowerupCollision : MonoBehaviour {
 			
 			GameObject exp0 = Instantiate(explosion0Prefab,pos,Quaternion.identity) as GameObject;
 			GameObject exp1 = Instantiate(explosion1Prefab,pos,Quaternion.identity) as GameObject;
-			exp0.transform.parent = world.transform;
-			exp1.transform.parent = world.transform;
+			if(coll.gameObject.name == "World"){
+				exp0.transform.parent = world.transform;
+				exp1.transform.parent = world.transform;
+			}
 			Destroy (exp0, 0.75f);
 			Destroy (exp1, 0.75f);
 			

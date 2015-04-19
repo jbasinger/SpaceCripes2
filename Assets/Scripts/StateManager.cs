@@ -189,6 +189,7 @@ public class StateManager : MonoBehaviour {
 		GameObject[] aliens = GameObject.FindGameObjectsWithTag("Alien");
 		GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteor");
 		GameObject[] powerups = GameObject.FindGameObjectsWithTag("PowerUp");
+		GameObject[] shields = GameObject.FindGameObjectsWithTag("Shield");
 		foreach(GameObject alien in aliens){
 			Destroy(alien);
 		}
@@ -197,6 +198,9 @@ public class StateManager : MonoBehaviour {
 		}
 		foreach(GameObject powerUp in powerups){
 			Destroy(powerUp);
+		}
+		foreach(GameObject shield in shields){
+			Destroy(shield);
 		}
 	}
 

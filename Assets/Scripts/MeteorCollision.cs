@@ -43,7 +43,7 @@ public class MeteorCollision : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		if(coll.gameObject.tag == "Alien" || coll.gameObject.name == "World"){
+		if(coll.gameObject.tag == "Alien" || coll.gameObject.name == "World" || coll.gameObject.tag == "Shield"){
 
 			AudioSource.PlayClipAtPoint(sfx[Random.Range (0,sfx.Length-1)],transform.position);
 
@@ -60,8 +60,12 @@ public class MeteorCollision : MonoBehaviour {
 
 			GameObject exp0 = Instantiate(explosion0Prefab,pos,Quaternion.identity) as GameObject;
 			GameObject exp1 = Instantiate(explosion1Prefab,pos,Quaternion.identity) as GameObject;
-			exp0.transform.parent = world.transform;
-			exp1.transform.parent = world.transform;
+
+			if(coll.gameObject.tag != "Shield"){
+				exp0.transform.parent = world.transform;
+				exp1.transform.parent = world.transform;
+			}
+
 			Destroy (exp0, 0.75f);
 			Destroy (exp1, 0.75f);
 

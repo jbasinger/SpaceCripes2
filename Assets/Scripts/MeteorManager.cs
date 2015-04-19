@@ -41,7 +41,7 @@ public class MeteorManager : MonoBehaviour {
 			rndMeteorStart = new Vector3(Mathf.Cos(rndAngle)*(meteorStartDistance),Mathf.Sin(rndAngle)*(meteorStartDistance),0);
 
 			if(Random.value >= 0.85){
-				GameObject powerUp = Instantiate(powerUps[0],rndMeteorStart,Quaternion.identity) as GameObject;
+				GameObject powerUp = Instantiate(powerUps[Random.Range(0,1)],rndMeteorStart,Quaternion.identity) as GameObject;
 				powerUp.transform.parent = this.gameObject.transform;
 			} else {
 				Transform newMeteor = Instantiate(baseMeteor,rndMeteorStart,Quaternion.identity) as Transform;

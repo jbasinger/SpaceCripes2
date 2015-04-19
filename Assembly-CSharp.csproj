@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\RandomSpin.cs" />
      <Compile Include="Assets\Scripts\RandomTwinkle.cs" />
      <Compile Include="Assets\Scripts\ScaleInOut.cs" />
+     <Compile Include="Assets\Scripts\ShieldState.cs" />
      <Compile Include="Assets\Scripts\StateManager.cs" />
      <Compile Include="Assets\Scripts\WorldState.cs" />
  <Reference Include="UnityEngine.UI">
