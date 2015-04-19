@@ -14,6 +14,7 @@ public class StateManager : MonoBehaviour {
 	public Transform YouLosePrefab;
 	public Transform YouWinPrefab;
 	public Transform PlayAgainPrefab;
+	public Transform PlayNextLevelPrefab;
 
 	private enum GameState {
 		NotStarted,
@@ -40,6 +41,7 @@ public class StateManager : MonoBehaviour {
 	private Transform youWin;
 	private Transform youLose;
 	private Transform playAgain;
+	private Transform playNextLevel;
 
 	private GameState state = GameState.NotStarted;
 	private delegate void StateHelper();
@@ -64,6 +66,7 @@ public class StateManager : MonoBehaviour {
 
 		Vector3 playAgainPos = world.transform.position + new Vector3(0f,-2f,0f);
 		playAgain = Instantiate(PlayAgainPrefab,playAgainPos,Quaternion.identity) as Transform;
+		playNextLevel = Instantiate(PlayNextLevelPrefab,playAgainPos,Quaternion.identity) as Transform;
 
 		Reset();
 
@@ -168,7 +171,7 @@ public class StateManager : MonoBehaviour {
 		state = GameState.Ending;
 		ClearMeteorsAndAliens();
 		youWin.gameObject.SetActive(true);
-		playAgain.gameObject.SetActive(true);
+		playNextLevel.gameObject.SetActive(true);
 		timer = 2f;
 	}
 
@@ -203,6 +206,7 @@ public class StateManager : MonoBehaviour {
 		youWin.gameObject.SetActive(false);
 		youLose.gameObject.SetActive(false);
 		playAgain.gameObject.SetActive(false);
+		playNextLevel.gameObject.SetActive(false);
 
 		world.gameObject.GetComponent<WorldState>().Reset();
 
