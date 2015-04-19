@@ -21,7 +21,7 @@ public class BulkyAlien : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		if(coll.gameObject.tag == "Meteor"){
+		if(coll.gameObject.tag == "Meteor" || coll.gameObject.tag == "PowerUp"){
 			gameObject.GetComponent<SpriteRenderer>().color = origColor;
 			transform.localScale = origScale;
 			Destroy(this);

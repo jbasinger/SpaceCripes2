@@ -38,6 +38,15 @@ public class WorldState : MonoBehaviour {
 		}
 	}
 
+	public void AddHealth(){
+		if(1+hitPoints > maxHitPoints) return;
+		Vector3 newHeartPos = hpBar.transform.position;
+		newHeartPos.x -= hitPoints*heartWidth;
+		GameObject newHeart = Instantiate(heartPrefab,newHeartPos,Quaternion.identity) as GameObject;
+		hearts[hitPoints] = newHeart;
+		hitPoints++;
+	}
+
 	//This should probably be somewhere else, but I'm running out of time here!
 	public void SetupStars(){
 		int numStars = Random.Range (minStars, maxStars);

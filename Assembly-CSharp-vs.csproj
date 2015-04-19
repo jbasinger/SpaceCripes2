@@ -56,6 +56,9 @@
      <Compile Include="Assets\Scripts\Mutations\BulkyAlien.cs" />
      <Compile Include="Assets\Scripts\Mutations\SpeedyAlien.cs" />
      <Compile Include="Assets\Scripts\PlanetaryGravity.cs" />
+     <Compile Include="Assets\Scripts\PowerUps\Health.cs" />
+     <Compile Include="Assets\Scripts\PowerUps\Shield.cs" />
+     <Compile Include="Assets\Scripts\PowerupCollision.cs" />
      <Compile Include="Assets\Scripts\RandomAliens.cs" />
      <Compile Include="Assets\Scripts\RandomSpin.cs" />
      <Compile Include="Assets\Scripts\RandomTwinkle.cs" />

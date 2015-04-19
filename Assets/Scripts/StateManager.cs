@@ -188,11 +188,15 @@ public class StateManager : MonoBehaviour {
 	void ClearMeteorsAndAliens(){
 		GameObject[] aliens = GameObject.FindGameObjectsWithTag("Alien");
 		GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteor");
+		GameObject[] powerups = GameObject.FindGameObjectsWithTag("PowerUp");
 		foreach(GameObject alien in aliens){
 			Destroy(alien);
 		}
 		foreach(GameObject meteor in meteors){
 			Destroy(meteor);
+		}
+		foreach(GameObject powerUp in powerups){
+			Destroy(powerUp);
 		}
 	}
 

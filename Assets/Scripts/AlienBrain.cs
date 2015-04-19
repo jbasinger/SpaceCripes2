@@ -73,7 +73,7 @@ public class AlienBrain : MonoBehaviour {
 		if(coll.gameObject.tag == "Alien"){
 			direction *= -1;
 		}
-		if(coll.gameObject.tag == "Meteor"){
+		if(coll.gameObject.tag == "Meteor" || coll.gameObject.tag == "PowerUp"){
 
 			hitPoints -= 1;
 

@@ -5,6 +5,7 @@ public class MeteorManager : MonoBehaviour {
 
 	public int maxMeteorCount;
 	public Transform baseMeteor;
+	public GameObject[] powerUps = new GameObject[2];
 
 	private float rndAngle;
 	private Vector3 rndMeteorStart;
@@ -39,12 +40,19 @@ public class MeteorManager : MonoBehaviour {
 			
 			rndMeteorStart = new Vector3(Mathf.Cos(rndAngle)*(meteorStartDistance),Mathf.Sin(rndAngle)*(meteorStartDistance),0);
 
-			Transform newMeteor = Instantiate(baseMeteor,rndMeteorStart,Quaternion.identity) as Transform;
-			newMeteor.transform.parent = this.gameObject.transform;
-			PlanetaryGravity grav = newMeteor.GetComponent<PlanetaryGravity>();
-			float gForce = grav.gravitationCoefficient;
-			newMeteor.GetComponent<PlanetaryGravity>().gravitationCoefficient = gForce + ((level-1)*gForce/10);
+			if(Random.value >= 0.9){
+				GameObject powerUp = Instantiate(powerUps[0],rndMeteorStart,Quaternion.identity) as GameObject;
+				powerUp.transform.parent = this.gameObject.transform;
+			} else {
+				Transform newMeteor = Instantiate(baseMeteor,rndMeteorStart,Quaternion.identity) as Transform;
+				newMeteor.transform.parent = this.gameObject.transform;
+				PlanetaryGravity grav = newMeteor.GetComponent<PlanetaryGravity>();
+				float gForce = grav.gravitationCoefficient;
+				newMeteor.GetComponent<PlanetaryGravity>().gravitationCoefficient = gForce + ((level-1)*gForce/10);
+			}
 		}
 	}
+
+
 
 }
