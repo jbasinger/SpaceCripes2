@@ -18,9 +18,13 @@ public class MeteorCollision : MonoBehaviour {
 
 	private GameObject[] parts = new GameObject[4];
 	private AudioClip[] sfx = new AudioClip[4];
+	private GameObject world;
 
 	// Use this for initialization
 	void Start () {
+
+		world = GameObject.Find("World");
+
 		parts[0] = meteor0Prefab;
 		parts[1] = meteor1Prefab;
 		parts[2] = meteor2Prefab;
@@ -56,6 +60,8 @@ public class MeteorCollision : MonoBehaviour {
 
 			GameObject exp0 = Instantiate(explosion0Prefab,pos,Quaternion.identity) as GameObject;
 			GameObject exp1 = Instantiate(explosion1Prefab,pos,Quaternion.identity) as GameObject;
+			exp0.transform.parent = world.transform;
+			exp1.transform.parent = world.transform;
 			Destroy (exp0, 0.75f);
 			Destroy (exp1, 0.75f);
 

@@ -21,6 +21,8 @@ public class WorldState : MonoBehaviour {
 	void Start () {
 		myColor = gameObject.GetComponent<SpriteRenderer>().color;
 		radius = gameObject.GetComponent<CircleCollider2D>();
+		//radius = Instantiate(gameObject.GetComponent<CircleCollider2D>(),transform.position,Quaternion.identity) as CircleCollider2D;
+		//radius.radius += 0.15f;
 		SetupStars();
 	}
 	
