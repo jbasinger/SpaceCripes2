@@ -17,7 +17,7 @@ public class Explosivo : MonoBehaviour {
 
 		body.AddTorque(Random.Range(-5f,5f));
 
-		rndMag = 5f;//Random.Range(3f,8f);
+		rndMag = 100f;//Random.Range(3f,8f);
 		rndAngle = Random.Range(-90,90);
 
 		rndVec = gameObject.transform.position - world.transform.position;
@@ -31,7 +31,7 @@ public class Explosivo : MonoBehaviour {
 	void Update () {
 		timer -= Time.deltaTime;
 		if(timer > 0){
-			body.AddForce(rndVec);
+			body.AddForce(rndVec*Time.deltaTime);
 		}
 	}
 }

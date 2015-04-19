@@ -27,6 +27,6 @@ public class PlanetaryGravity : MonoBehaviour {
 		if(state.IsStopped()) return;
 
 		normalDiff = world.transform.position - gameObject.transform.position;
-		myBodyIsReady.AddForce(normalDiff.normalized * gravitationCoefficient);
+		myBodyIsReady.AddForce(normalDiff.normalized * gravitationCoefficient * Time.deltaTime);
 	}
 }

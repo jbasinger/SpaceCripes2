@@ -93,7 +93,7 @@ public class StateManager : MonoBehaviour {
 			LoseGame();
 		}
 
-		if(state == GameState.Ending && Input.anyKeyDown){
+		if(state == GameState.Ending && Input.anyKeyDown && timer <= 0){
 			Reset();
 			state = GameState.NotStarted;
 		}
@@ -167,6 +167,7 @@ public class StateManager : MonoBehaviour {
 		ClearMeteorsAndAliens();
 		youWin.gameObject.SetActive(true);
 		playAgain.gameObject.SetActive(true);
+		timer = 2f;
 	}
 
 	void LoseGame(){
@@ -176,6 +177,7 @@ public class StateManager : MonoBehaviour {
 		world.AddComponent<ColorFlipOut>();
 		youLose.gameObject.SetActive(true);
 		playAgain.gameObject.SetActive(true);
+		timer = 2f;
 	}
 
 	void ClearMeteorsAndAliens(){
