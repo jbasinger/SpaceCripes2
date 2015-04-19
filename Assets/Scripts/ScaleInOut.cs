@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ScaleInOut : MonoBehaviour {
 
-	private int direction = 1;
-	private float magnitude;
+	//private int direction = 1;
+	//private float magnitude;
 
 	// Use this for initialization
 	void Start () {

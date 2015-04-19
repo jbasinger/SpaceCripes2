@@ -5,6 +5,14 @@ public class AlienBrain : MonoBehaviour {
 
 	public int speed;
 
+	public GameObject alienPart0Prefab;
+	public GameObject alienPart1Prefab;
+	public GameObject alienPart2Prefab;
+	public GameObject alienPart3Prefab;
+	public GameObject alienPart4Prefab;
+	public GameObject alienPart5Prefab;
+	public GameObject alienPart6Prefab;
+
 	private const float RECONTEMPLATE_WHY_I_AM_AN_ALIEN_AND_NOT_A_WIZARD_TIME = 2.0f;
 
 	private int direction = 1;
@@ -14,7 +22,7 @@ public class AlienBrain : MonoBehaviour {
 	private float mahMagnitude;
 	private Vector2 mahScale;
 	private float timer = 0f;
-	private GameObject[] alienParts;
+	private GameObject[] alienParts = new GameObject[7];
 
 	private StateManager state;
 
@@ -25,10 +33,15 @@ public class AlienBrain : MonoBehaviour {
 		UpdateDirectionAndTimer();
 		//Randomly remove or add 10% of the speed. Make stuff look more fun?
 		speed += Random.Range(-speed/10,speed/10);
-		alienParts = GameObject.FindGameObjectsWithTag("AlienParts");
-		/*foreach(GameObject part in alienParts){
-			part.GetComponent<SpriteRenderer>().color = Color.clear;
-		}*/
+
+		alienParts[0] = alienPart0Prefab;
+		alienParts[1] = alienPart1Prefab;
+		alienParts[2] = alienPart2Prefab;
+		alienParts[3] = alienPart3Prefab;
+		alienParts[4] = alienPart4Prefab;
+		alienParts[5] = alienPart5Prefab;
+		alienParts[6] = alienPart6Prefab;
+
 	}
 	
 	// Update is called once per frame
@@ -62,8 +75,6 @@ public class AlienBrain : MonoBehaviour {
 		if(coll.gameObject.tag == "Meteor"){
 			foreach(GameObject part in alienParts){
 				GameObject newPart = Instantiate(part,gameObject.transform.position,Quaternion.identity) as GameObject;
-				Rigidbody2D bodyPart = newPart.GetComponent<Rigidbody2D>();
-				bodyPart.AddTorque(5f);
 				newPart.AddComponent<Explosivo>();
 				Destroy (newPart, 3f);
 			}

@@ -27,7 +27,7 @@ public class StateManager : MonoBehaviour {
 	private float timer;
 	private float dT;
 	private float magnitude;
-	private int direction = 1;
+	//private int direction = 1;
 	private GameObject world;
 
 	private Transform getReady;
