@@ -6,16 +6,22 @@ public class WorldState : MonoBehaviour {
 	public int maxHitPoints;
 	public int hitPoints;
 	public GameObject heartPrefab;
+	public int minStars;
+	public int maxStars;
+	public GameObject starPrefab;
+
 
 	private Color myColor;
 	private GameObject hpBar;
 	private GameObject[] hearts;
 	private float heartWidth;
+	private CircleCollider2D radius;
 
 	// Use this for initialization
 	void Start () {
 		myColor = gameObject.GetComponent<SpriteRenderer>().color;
-
+		radius = gameObject.GetComponent<CircleCollider2D>();
+		SetupStars();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +33,22 @@ public class WorldState : MonoBehaviour {
 		if(coll.gameObject.tag == "Meteor"){
 			hitPoints -= 1;
 			Destroy (hearts[hitPoints]);
+		}
+	}
+
+	//This should probably be somewhere else, but I'm running out of time here!
+	public void SetupStars(){
+		int numStars = Random.Range (minStars, maxStars);
+		if(numStars < 0) numStars = 0;
+		for(int i=0; i < numStars; i++){
+		
+			Vector3 rndPos = Vector3.zero;
+			while(radius.OverlapPoint(rndPos)){
+				rndPos = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range (0,Screen.width),Random.Range (0,Screen.height),0f));
+				rndPos.z = 0f;
+			}
+
+			Instantiate(starPrefab,rndPos,Quaternion.identity);
 		}
 	}
 

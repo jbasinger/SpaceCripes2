@@ -8,10 +8,13 @@ public class MeteorCollision : MonoBehaviour {
 	public GameObject meteor2Prefab;
 	public GameObject meteor3Prefab;
 
-	public AudioClip explosion0;
-	public AudioClip explosion1;
-	public AudioClip explosion2;
-	public AudioClip explosion3;
+	public GameObject explosion0Prefab;
+	public GameObject explosion1Prefab;
+
+	public AudioClip explosion0Sound;
+	public AudioClip explosion1Sound;
+	public AudioClip explosion2Sound;
+	public AudioClip explosion3Sound;
 
 	private GameObject[] parts = new GameObject[4];
 	private AudioClip[] sfx = new AudioClip[4];
@@ -23,10 +26,10 @@ public class MeteorCollision : MonoBehaviour {
 		parts[2] = meteor2Prefab;
 		parts[3] = meteor3Prefab;
 
-		sfx[0] = explosion0;
-		sfx[1] = explosion1;
-		sfx[2] = explosion2;
-		sfx[3] = explosion3;
+		sfx[0] = explosion0Sound;
+		sfx[1] = explosion1Sound;
+		sfx[2] = explosion2Sound;
+		sfx[3] = explosion3Sound;
 
 	}
 	
@@ -45,6 +48,16 @@ public class MeteorCollision : MonoBehaviour {
 				newPart.AddComponent<Explosivo>();
 				Destroy (newPart, 1.5f);
 			}
+
+			Vector3 pos = coll.transform.position;
+			if(coll.gameObject.name == "World"){
+				pos = gameObject.transform.position;
+			}
+
+			GameObject exp0 = Instantiate(explosion0Prefab,pos,Quaternion.identity) as GameObject;
+			GameObject exp1 = Instantiate(explosion1Prefab,pos,Quaternion.identity) as GameObject;
+			Destroy (exp0, 0.75f);
+			Destroy (exp1, 0.75f);
 
 			Destroy(gameObject);
 		}
