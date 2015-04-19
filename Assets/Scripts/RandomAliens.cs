@@ -23,6 +23,10 @@ public class RandomAliens : MonoBehaviour {
 		float worldRadius = world.GetComponent<CircleCollider2D>().radius;
 		float halfHeightOfAlien = baseAlien.transform.localScale.y/4;
 
+		if(levelManager == null){
+			levelManager = GameObject.Find("LevelManager");
+		}
+
 		int level = levelManager.GetComponent<LevelManager>().level;
 		int alienCount = numberOfAliens + (level/2);
 		if(alienCount > 20) alienCount = 20;
