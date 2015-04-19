@@ -13,7 +13,7 @@ public class ScaleInOut : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		/*
 		if(transform.localScale.x >= 1.2f || transform.localScale.x <= 0.8f){
 			direction *= -1;
 		}
@@ -21,5 +21,6 @@ public class ScaleInOut : MonoBehaviour {
 		magnitude = direction*Time.deltaTime;
 		
 		transform.localScale = new Vector3(transform.localScale.x + magnitude,transform.localScale.y + magnitude,0f);
+		*/
 	}
 }
