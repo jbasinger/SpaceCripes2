@@ -10,7 +10,7 @@ public class BulkyAlien : MonoBehaviour {
 	void Start () {
 		gameObject.GetComponent<AlienBrain>().hitPoints = 2;
 		origColor = gameObject.GetComponent<SpriteRenderer>().color;
-		gameObject.GetComponent<SpriteRenderer>().color = new Color(Random.value,Random.value,Random.value);
+		gameObject.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.5f,1.0f),Random.Range(0.5f,1.0f),Random.Range(0.5f,1.0f));
 		origScale = transform.localScale;
 		transform.localScale = transform.localScale * 1.5f;
 	}

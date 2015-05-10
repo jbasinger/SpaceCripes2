@@ -15,7 +15,7 @@ public class ColorFlipOut : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		timer -= Time.deltaTime;
+		timer -= Time.unscaledDeltaTime;
 
 		if(timer <= 0){
 			gameObject.GetComponent<SpriteRenderer>().color = new Color(Random.value,Random.value,Random.value);

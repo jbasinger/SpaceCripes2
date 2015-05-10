@@ -46,6 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PauseGame.cs" />
+     <Compile Include="Assets\PlayGame.cs" />
+     <Compile Include="Assets\QuitGame.cs" />
+     <Compile Include="Assets\QuitToMenu.cs" />
      <Compile Include="Assets\Scripts\AlienBrain.cs" />
      <Compile Include="Assets\Scripts\ColorFlipOut.cs" />
      <Compile Include="Assets\Scripts\Explosivo.cs" />
@@ -66,6 +70,7 @@
      <Compile Include="Assets\Scripts\ShieldState.cs" />
      <Compile Include="Assets\Scripts\StateManager.cs" />
      <Compile Include="Assets\Scripts\WorldState.cs" />
+     <Compile Include="Assets\WorldAutoSpin.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

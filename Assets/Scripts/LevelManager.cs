@@ -43,6 +43,10 @@ public class LevelManager : MonoBehaviour {
 
 	public void DrawLevel(){
 
+		if(levelNumberLabels == null){
+			levelNumberLabels = new ArrayList();
+		}
+
 		foreach(GameObject number in levelNumberLabels){
 			Destroy(number);
 		}

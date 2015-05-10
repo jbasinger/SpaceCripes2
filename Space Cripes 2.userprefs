@@ -1,16 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MeteorManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RandomTwinkle.cs">
     <Files>
-      <File FileName="Assets\Scripts\PowerUps\Shield.cs" Line="33" Column="3" />
-      <File FileName="Assets\Scripts\ShieldState.cs" Line="27" Column="1" />
-      <File FileName="Assets\Scripts\MeteorCollision.cs" Line="67" Column="5" />
-      <File FileName="Assets\Scripts\PowerupCollision.cs" Line="28" Column="18" />
-      <File FileName="Assets\Scripts\MeteorManager.cs" Line="43" Column="26" />
+      <File FileName="Assets\PauseGame.cs" Line="43" Column="25" />
+      <File FileName="Assets\Scripts\InputManager.cs" Line="40" Column="65" />
+      <File FileName="Assets\Scripts\ColorFlipOut.cs" Line="19" Column="3" />
+      <File FileName="Assets\QuitToMenu.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\WorldState.cs" Line="34" Column="44" />
+      <File FileName="Assets\Scripts\RandomTwinkle.cs" Line="16" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\Repos\Games\LudumDare32\SpaceCripes2\Space Cripes 2\Assets\Scripts\LevelManager.cs" line="50" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

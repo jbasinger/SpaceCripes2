@@ -14,7 +14,7 @@ public class RandomTwinkle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timer -= Time.deltaTime;
+		timer -= Time.unscaledDeltaTime;
 		if(timer <= 0){
 			SetupTimer();
 			anim.Play("Star");
