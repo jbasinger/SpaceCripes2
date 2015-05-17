@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Advertisements;
 
 public class StateManager : MonoBehaviour {
 
@@ -22,6 +23,7 @@ public class StateManager : MonoBehaviour {
 		Playing,
 		Won,
 		Lost,
+		ShowAd,
 		Ending
 	};
 
@@ -96,6 +98,10 @@ public class StateManager : MonoBehaviour {
 
 		if(state == GameState.Lost){
 			LoseGame();
+		}
+
+		if(state == GameState.ShowAd && Input.anyKeyDown && timer <= 0){
+			ShowAd();
 		}
 
 		if(state == GameState.Ending && Input.anyKeyDown && timer <= 0){
@@ -177,12 +183,25 @@ public class StateManager : MonoBehaviour {
 
 	void LoseGame(){
 		levelManager.gameObject.GetComponent<LevelManager>().Reset();
-		state = GameState.Ending;
+		state = GameState.ShowAd;
 		ClearMeteorsAndAliens();
 		world.AddComponent<ColorFlipOut>();
 		youLose.gameObject.SetActive(true);
 		playAgain.gameObject.SetActive(true);
 		timer = 2f;
+	}
+
+	void ShowAd(){
+		if(Advertisement.isReady()){
+			Advertisement.Show(null, new ShowOptions{
+				pause = true,
+				resultCallback = result => {
+					Reset();
+					state = GameState.NotStarted;
+					timer = 0f;
+				}
+			});
+		}
 	}
 
 	void ClearMeteorsAndAliens(){
