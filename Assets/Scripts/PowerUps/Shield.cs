@@ -7,9 +7,11 @@ public class Shield : MonoBehaviour {
 	public GameObject shieldPrefab;
 	public float radius;
 
+	private SoundManager soundManager;
+
 	// Use this for initialization
 	void Start () {
-
+		soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 	}
 	
 	// Update is called once per frame
@@ -18,7 +20,10 @@ public class Shield : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D coll){
 		if(coll.gameObject.name == "World" || coll.gameObject.tag == "Shield"){
-			AudioSource.PlayClipAtPoint(shieldUpSound,transform.position);
+
+			if(soundManager.SFXAreOn()){
+				AudioSource.PlayClipAtPoint(shieldUpSound,transform.position);
+			}
 
 			GameObject[] otherShields = GameObject.FindGameObjectsWithTag("Shield");
 

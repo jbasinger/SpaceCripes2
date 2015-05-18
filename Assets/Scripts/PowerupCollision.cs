@@ -12,11 +12,13 @@ public class PowerupCollision : MonoBehaviour {
 	public AudioClip explosion3Sound;
 	
 	private GameObject world;
+	private SoundManager soundManager;
 	private AudioClip[] sfx = new AudioClip[4];
 
 	// Use this for initialization
 	void Start () {
 		world = GameObject.Find("World");
+		soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 		
 		sfx[0] = explosion0Sound;
 		sfx[1] = explosion1Sound;
@@ -52,7 +54,9 @@ public class PowerupCollision : MonoBehaviour {
 		}
 
 		if(coll.gameObject.tag == "Alien"){
-			AudioSource.PlayClipAtPoint(sfx[Random.Range (0,sfx.Length-1)],transform.position);
+			if(soundManager.SFXAreOn()){
+				AudioSource.PlayClipAtPoint(sfx[Random.Range (0,sfx.Length-1)],transform.position);
+			}
 		}
 
 	}

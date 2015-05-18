@@ -6,10 +6,12 @@ public class Health : MonoBehaviour {
 	public AudioClip healthUpSound;
 
 	private GameObject world;
+	private SoundManager soundManager;
 
 	// Use this for initialization
 	void Start () {
 		world = GameObject.Find("World");
+		soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 	}
 	
 	// Update is called once per frame
@@ -19,7 +21,9 @@ public class Health : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll){
 		if(coll.gameObject.name == "World" || coll.gameObject.tag == "Shield"){
-			AudioSource.PlayClipAtPoint(healthUpSound,transform.position);
+			if(soundManager.SFXAreOn()){
+				AudioSource.PlayClipAtPoint(healthUpSound,transform.position);
+			}
 			world.GetComponent<WorldState>().AddHealth();
 		}
 	}

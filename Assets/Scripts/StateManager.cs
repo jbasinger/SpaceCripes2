@@ -4,6 +4,8 @@ using UnityEngine.Advertisements;
 
 public class StateManager : MonoBehaviour {
 
+	public SoundManager soundManager;
+
 	//Game Start Prefabs
 	public Transform GetReadyPrefab;
 	public Transform CountDown1Prefab;
@@ -178,6 +180,7 @@ public class StateManager : MonoBehaviour {
 		ClearMeteorsAndAliens();
 		youWin.gameObject.SetActive(true);
 		playNextLevel.gameObject.SetActive(true);
+		soundManager.PlayWinMusic();
 		timer = 2f;
 	}
 
@@ -188,10 +191,12 @@ public class StateManager : MonoBehaviour {
 		world.AddComponent<ColorFlipOut>();
 		youLose.gameObject.SetActive(true);
 		playAgain.gameObject.SetActive(true);
+		soundManager.PlayLoseMusic();
 		timer = 2f;
 	}
 
 	void ShowAd(){
+		soundManager.StopAllMusic();
 		if(Advertisement.isReady()){
 			Advertisement.Show(null, new ShowOptions{
 				pause = true,
@@ -234,6 +239,8 @@ public class StateManager : MonoBehaviour {
 		youLose.gameObject.SetActive(false);
 		playAgain.gameObject.SetActive(false);
 		playNextLevel.gameObject.SetActive(false);
+
+		soundManager.PlayGameMusic();
 
 		world.gameObject.GetComponent<WorldState>().Reset();
 
