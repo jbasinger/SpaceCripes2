@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\StateManager.cs" />
      <Compile Include="Assets\Scripts\WorldState.cs" />
      <Compile Include="Assets\SoundManager.cs" />
+     <Compile Include="Assets\SplashScreen.cs" />
      <Compile Include="Assets\WorldAutoSpin.cs" />
      <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
      <None Include="Assets\Plugins\Android\unityads\build.xml" />

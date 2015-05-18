@@ -1,22 +1,21 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MusicButton.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SFXButton.cs">
     <Files>
       <File FileName="Assets\Scripts\StateManager.cs" Line="243" Column="1" />
       <File FileName="..\..\Prep\LudumPrep\Assets\TestScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InputManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\SoundManager.cs" Line="24" Column="6" />
-      <File FileName="Assets\ToggleMusic.cs" Line="1" Column="1" />
-      <File FileName="Assets\ToggleSFX.cs" Line="1" Column="1" />
+      <File FileName="Assets\SoundManager.cs" Line="30" Column="4" />
       <File FileName="Assets\Scripts\MeteorCollision.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PowerupCollision.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PowerUps\Health.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PowerUps\Shield.cs" Line="1" Column="1" />
-      <File FileName="Assets\MusicButton.cs" Line="18" Column="2" />
+      <File FileName="Assets\MusicButton.cs" Line="21" Column="49" />
+      <File FileName="Assets\SFXButton.cs" Line="21" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\Repos\Games\LudumDare32\SpaceCripes2\Space Cripes 2\Assets\MusicButton.cs" line="20" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

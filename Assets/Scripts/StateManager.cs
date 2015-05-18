@@ -240,7 +240,9 @@ public class StateManager : MonoBehaviour {
 		playAgain.gameObject.SetActive(false);
 		playNextLevel.gameObject.SetActive(false);
 
-		soundManager.PlayGameMusic();
+		if(soundManager.MusicIsOn()){
+			soundManager.PlayGameMusic();
+		}
 
 		world.gameObject.GetComponent<WorldState>().Reset();
 
